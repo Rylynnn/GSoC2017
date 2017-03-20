@@ -1,7 +1,7 @@
 # GSoC2017 for Boost.Geometry
 ## Programming Compentency Test
 ### Source Code
-All the source code are in the file called "ProgrammingTest", and the README.md of it is the a rest of testcase which I used to test the correct of my code, all the functions in code is tested by myself so it may have little bugs. Every time you find bugs, it is very kind of you to send it to me using issue pages.
+All the source code are in the directory called "ProgrammingTest", and the README.md of it is the a rest of testcase which I used to test the correctness of my code, all the functions in code is tested by myself so it may have some bugs. If you find any bug, it is very kind of you to send it to me using issue pages.
 
 #### earth_point_GreatCircle
 earth_point_GreatCircle.hpp is the point on the earth with spherical model. I used [Great circle distance](https://en.wikipedia.org/wiki/Great-circle_distance)to calculate the point on the earth. 
