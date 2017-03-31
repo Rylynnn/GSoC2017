@@ -1,3 +1,4 @@
+        { this->latitude = v * PI / 180; } 
 #ifndef BOOST_GEOMETRY_GEOMETRIES_EARTH_POINT_HPP
 #define BOOST_GEOMETRY_GEOMETRIES_EARTH_POINT_HPP
 
@@ -17,7 +18,8 @@
 #include <boost/mpl/int.hpp>
 
 #include <boost/geometry/core/cs.hpp>
-#include <boost/geometry/geometries/point.hpp>
+#include <boost/geometry/geometries/point.hpp
+>
 
 namespace boost { namespace geometry
 {
@@ -235,13 +237,13 @@ public:
         sc_U1U2 = sinU1 * cosU2;
 
         sign = L;
-        int temp = 100;
+        int temp = 1000;
 
         do
         {
             sin_sign = sin(sign), cos_sign = cos(sign);
 
-            sin_arc = sqrt((cosU2 * sin_sign) * (cosU2 * sin_sign) + (cs_U1U2 - sc_U1U2 * cos_sign) * (cs_U1U2 - sc_U1U2 * cos_sign));
+            sin_arc = sqrt(sqr(cosU2 * sin_sign)+ sqr(cs_U1U2 - sc_U1U2 * cos_sign));
             if(sin_arc == 0)
             {
                 return 0;
@@ -249,7 +251,7 @@ public:
             cos_arc = ss_U1U2 + cc_U1U2 * cos_sign;
             arc_lenth = atan(sin_arc / cos_arc);
             sin_alfa = (cc_U1U2 * sin_sign) / sin_arc;
-            cos2_alfa = 1 - sin_alfa * sin_alfa;
+            cos2_alfa = 1 - sqr(sin_alfa);
             if(cos2_alfa == 0){
                 cos_2arcm = 0;
             }
@@ -260,14 +262,15 @@ public:
             C = earth_f / 6 * cos2_alfa * (4 + earth_f * (4 - 3 * cos2_alfa));
             sign_ = sign;
             sign = sign + (1 - C) * earth_f * sin_alfa * (arc_lenth + C * sin_arc * (cos_2arcm + C * cos_arc * (-1 + 2 * cos_2arcm * cos_2arcm)));
+            temp--;
         }while(fabs(sign - sign_) > eps && temp > 0);
 
         double squ_u, A, B, delta_arc;
 
-        squ_u = cos2_alfa * (earth_a * earth_a / earth_b * earth_b - 1) ;
+        squ_u = cos2_alfa * (sqr(earth_a/earth_b)- 1) ;
         A = 1 + squ_u / 16384 * (4096 + squ_u * (-768 + squ_u * (320 - 175 * squ_u)));
         B = (squ_u / 1024) * (256 + squ_u * (-128 + squ_u * (74 - 47 * squ_u)));
-        delta_arc = B * sin_arc * (cos_2arcm + 0.25 * B * (cos_arc * (-1 + 2 * cos_2arcm * cos_2arcm) - 1/6 * B * cos_2arcm * (-3 + 4 * sin_arc * sin_arc) * (-3 + 4 * cos_2arcm * cos_2arcm)));
+        delta_arc = B * sin_arc * (cos_2arcm + 0.25 * B * (cos_arc * (-1 + 2 * sqr(cos_2arcm)) - 1/6 * B * cos_2arcm * (-3 + 4 * sqr(sin_arc)) * (-3 + 4 * sqr(cos_2arcm)));
         s = earth_b * A * (arc_lenth - delta_arc);
 
         return s;
