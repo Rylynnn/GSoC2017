@@ -1,4 +1,3 @@
-        { this->latitude = v * PI / 180; } 
 #ifndef BOOST_GEOMETRY_GEOMETRIES_EARTH_POINT_HPP
 #define BOOST_GEOMETRY_GEOMETRIES_EARTH_POINT_HPP
 
@@ -6,20 +5,20 @@
 #include <cmath>
 #include <algorithm>
 #include <string>
+#include <iostream>
 #define PI acos(-1)
 #define earth_a (double)6378137.0
 #define earth_f (double)1/298.257223563
-#define earth_b ((double)1-earth_f) * earth_a
+#define earth_b (double)6356752.314245
 #define earth_e12 (earth_a * earth_a - earth_b * earth_b) / (earth_a * earth_a)
 #define earth_e22 (earth_a * earth_a - earth_b * earth_b) / (earth_b * earth_b)
-#define eps 1e-6
+#define eps 1e-12
 
 #include <boost/config.hpp>
 #include <boost/mpl/int.hpp>
 
 #include <boost/geometry/core/cs.hpp>
-#include <boost/geometry/geometries/point.hpp
->
+#include <boost/geometry/geometries/point.hpp>
 
 namespace boost { namespace geometry
 {
@@ -216,63 +215,70 @@ public:
 
     inline double shortest_distance_Vincenty(earth_point const& ep2)
     {
+        //std::cout<<this->longitude<<' '<<this->latitude<<"  "<<ep2.get_long()<<' '<<ep2.get_lat()<<std::endl;     
         double lambda_1, lambda_2, alfa_1, alfa_2, sin_alfa, cos2_alfa;
-        double U1, U2, L, s, arc_lenth, sign, sign_;
+        double tanU1, tanU2, L, s, arc_lenth, sign, sign_;
 
         L = ep2.get_long() - this->longitude;
-        U1 = atan((1 - earth_f) * tan(this->latitude));
-        U2 = atan((1 - earth_f) * tan(ep2.get_lat()));
-
+        if (L < -PI) L += 2 * PI;
+        if (L > PI) L -= 2 * PI;
+        tanU1 = (1 - earth_f) * tan(this->latitude);
+        tanU2 = (1 - earth_f) * tan(ep2.get_lat());
         double cosU1, sinU1, cosU2, sinU2, cc_U1U2, ss_U1U2, cs_U1U2, sc_U1U2;
         double sin_sign, cos_sign, sin_arc, cos_arc, cos_2arcm;
         double C;
 
-        cosU1 = cos(U1);
-        sinU1 = sin(U1);
-        cosU2 = cos(U2);
-        sinU2 = sin(U2);
+        cosU1 = 1 / sqrt(1 + tanU1 * tanU1);
+        sinU1 = tanU1 * cosU1;
+        cosU2 = 1 / sqrt(1 + tanU2 * tanU2);
+        sinU2 = tanU2 * cosU2;
+        //std::cout<<cosU1<<' '<<cosU2<<' '<<sinU1<<' '<<sinU2<<std::endl;
         cc_U1U2 = cosU1 * cosU2;
         ss_U1U2 = sinU1 * sinU2;
         cs_U1U2 = cosU1 * sinU2;
         sc_U1U2 = sinU1 * cosU2;
 
         sign = L;
-        int temp = 1000;
+        int temp = 10;
 
         do
         {
             sin_sign = sin(sign), cos_sign = cos(sign);
 
-            sin_arc = sqrt(sqr(cosU2 * sin_sign)+ sqr(cs_U1U2 - sc_U1U2 * cos_sign));
+            sin_arc = sqrt((cosU2 * sin_sign) * (cosU2 * sin_sign) + (cs_U1U2 - sc_U1U2 * cos_sign) * (cs_U1U2 - sc_U1U2 * cos_sign));
             if(sin_arc == 0)
             {
                 return 0;
             }
             cos_arc = ss_U1U2 + cc_U1U2 * cos_sign;
+            
             arc_lenth = atan(sin_arc / cos_arc);
             sin_alfa = (cc_U1U2 * sin_sign) / sin_arc;
-            cos2_alfa = 1 - sqr(sin_alfa);
+            cos2_alfa = 1 - sin_alfa * sin_alfa;
             if(cos2_alfa == 0){
                 cos_2arcm = 0;
             }
             else{
                 cos_2arcm = cos_arc - (2 * ss_U1U2 / cos2_alfa);
             }
-
-            C = earth_f / 6 * cos2_alfa * (4 + earth_f * (4 - 3 * cos2_alfa));
+            C = earth_f / 16 * cos2_alfa * (4 + earth_f * (4 - 3 * cos2_alfa));
+            
             sign_ = sign;
-            sign = sign + (1 - C) * earth_f * sin_alfa * (arc_lenth + C * sin_arc * (cos_2arcm + C * cos_arc * (-1 + 2 * cos_2arcm * cos_2arcm)));
+            sign = L + (1 - C) * earth_f * sin_alfa * (arc_lenth + C * sin_arc * (cos_2arcm + C * cos_arc * (-1 + 2 * cos_2arcm * cos_2arcm)));
+            //std::cout<<sign<<' '<<sign_<<' '<<std::endl;
             temp--;
         }while(fabs(sign - sign_) > eps && temp > 0);
-
+        if(temp == 0){
+            std::cout<<"Formula failed"<<std::endl;
+        }
         double squ_u, A, B, delta_arc;
 
-        squ_u = cos2_alfa * (sqr(earth_a/earth_b)- 1) ;
+        squ_u = cos2_alfa * ((earth_a/earth_b) * (earth_a/earth_b) - 1);
         A = 1 + squ_u / 16384 * (4096 + squ_u * (-768 + squ_u * (320 - 175 * squ_u)));
         B = (squ_u / 1024) * (256 + squ_u * (-128 + squ_u * (74 - 47 * squ_u)));
-        delta_arc = B * sin_arc * (cos_2arcm + 0.25 * B * (cos_arc * (-1 + 2 * sqr(cos_2arcm)) - 1/6 * B * cos_2arcm * (-3 + 4 * sqr(sin_arc)) * (-3 + 4 * sqr(cos_2arcm)));
+        delta_arc = B * sin_arc * (cos_2arcm + 0.25 * B * (cos_arc * (-1 + 2 * cos_2arcm * cos_2arcm) - 1/6 * B * cos_2arcm * (-3 + 4 * sin_arc * sin_arc) * (-3 + 4 * cos_2arcm * cos_2arcm)));
         s = earth_b * A * (arc_lenth - delta_arc);
-
+        s /= 1e3;
         return s;
     }
 };
