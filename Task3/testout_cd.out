@@ -1,0 +1,333 @@
+comparable_geographic_distance:2
+distance: 2
+P1: -141.577, 44.4739 P2: 5.4699, -53.5127
+P3: 48.4488, 8.7958 P4: -116.683, 89.3409
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:1
+distance (sec):0.01782
+comparable_geographic_distance (sec):0.002767
+
+comparable_geographic_distance:2
+distance: 2
+P1: -2.8969, 76.4511 P2: -141.655, -51.4682
+P3: -89.1273, -83.156 P4: 127.919, 39.5319
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:1
+distance (sec):0.014041
+comparable_geographic_distance (sec):0.002168
+
+comparable_geographic_distance:2
+distance: 2
+P1: 37.4008, 18.9698 P2: -70.7655, 30.7962
+P3: -14.2323, 37.7838 P4: 8.43888, 82.0077
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:1
+distance (sec):0.011824
+comparable_geographic_distance (sec):0.001795
+
+comparable_geographic_distance:1
+distance: 2
+P1: -91.0079, -49.4179 P2: -123.71, 10.2196
+P3: -163.761, 74.6357 P4: -162.027, -55.4991
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:0
+distance (sec):0.010145
+comparable_geographic_distance (sec):0.001731
+
+comparable_geographic_distance:2
+distance: 2
+P1: 24.1734, 3.2443 P2: -70.0723, -12.9088
+P3: -149.368, -65.2197 P4: -32.0003, 44.6133
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:1
+distance (sec):0.009604
+comparable_geographic_distance (sec):0.001593
+
+comparable_geographic_distance:2
+distance: 2
+P1: -53.7533, -33.6712 P2: 103.309, 51.6997
+P3: 21.6121, 56.7075 P4: 25.503, 57.9584
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:1
+distance (sec):0.009868
+comparable_geographic_distance (sec):0.001534
+
+comparable_geographic_distance:2
+distance: 1
+P1: -135.321, 6.08436 P2: 135.243, -9.69794
+P3: -16.9494, -61.0531 P4: -124.13, -85.9579
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:0
+distance (sec):0.009286
+comparable_geographic_distance (sec):0.001529
+
+comparable_geographic_distance:2
+distance: 2
+P1: -101.244, -33.3461 P2: -179.081, 80.6134
+P3: 63.689, -26.8837 P4: -68.4707, 32.8685
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:1
+distance (sec):0.007913
+comparable_geographic_distance (sec):0.00146
+
+comparable_geographic_distance:2
+distance: 1
+P1: 39.2773, 60.815 P2: 69.1284, 26.3961
+P3: -76.8006, 89.2292 P4: 128.903, 53.1867
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:0
+distance (sec):0.006107
+comparable_geographic_distance (sec):0.000864
+
+comparable_geographic_distance:1
+distance: 1
+P1: -169.358, -81.2765 P2: 15.1943, -82.9069
+P3: 106.658, 53.0754 P4: -55.7159, 66.3955
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:1
+distance (sec):0.004083
+comparable_geographic_distance (sec):0.000843
+
+comparable_geographic_distance:1
+distance: 1
+P1: 138.624, 28.9084 P2: -139.557, -45.2984
+P3: -68.789, -27.7114 P4: 34.7208, 2.05659
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:1
+distance (sec):0.005136
+comparable_geographic_distance (sec):0.000828
+
+comparable_geographic_distance:1
+distance: 1
+P1: 33.8946, 77.6426 P2: -150.383, 42.749
+P3: 175.28, -14.8382 P4: -63.871, -89.6688
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:1
+distance (sec):0.004362
+comparable_geographic_distance (sec):0.000833
+
+comparable_geographic_distance:1
+distance: 2
+P1: -101.349, -78.4287 P2: -179.759, -29.804
+P3: -170.95, 71.9473 P4: -140.831, 81.3883
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:0
+distance (sec):0.004285
+comparable_geographic_distance (sec):0.00085
+
+comparable_geographic_distance:2
+distance: 2
+P1: -142.858, 22.2853 P2: 28.8775, 74.1967
+P3: 68.38, 71.1418 P4: 66.9032, 84.262
+comparable_geographic_distance: P1, P2 lager than P3, P4
+consistency:1
+distance (sec):0.004533
+comparable_geographic_distance (sec):0.00083
+
+comparable_geographic_distance:1
+distance: 1
+P1: 18.7127, -82.351 P2: 100.106, -64.5939
+P3: 73.3296, -7.0729 P4: -161.643, 49.5615
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:1
+distance (sec):0.004459
+comparable_geographic_distance (sec):0.000934
+
+comparable_geographic_distance:1
+distance: 1
+P1: 44.8657, 25.6625 P2: 38.7657, -32.8717
+P3: 107.422, -36.4064 P4: 50.3708, -1.7206
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:1
+distance (sec):0.005058
+comparable_geographic_distance (sec):0.000825
+
+comparable_geographic_distance:1
+distance: 1
+P1: -106.998, -10.0591 P2: -121.006, 50.1445
+P3: 96.8451, -12.4748 P4: -74.0529, 44.5497
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:1
+distance (sec):0.004636
+comparable_geographic_distance (sec):0.000829
+
+comparable_geographic_distance:1
+distance: 1
+P1: 143.717, 34.7847 P2: 165.281, 28.5785
+P3: -71.0317, 38.4825 P4: -159.673, -30.9438
+comparable_geographic_distance: P1, P2 less than P3, P4
+consistency:1
+distance (sec):0.004997
+comparable_geographic_distance (sec):0.000825
+
+comparable_geographic_distance:3
+distance: 2
+P1: -78.6997, -82.7874 P2: -14.6808, 81.1023
+P3: -78.6997, -82.7874 P4: -133.728, 36.0054
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004354
+comparable_geographic_distance (sec):0.001116
+
+comparable_geographic_distance:3
+distance: 1
+P1: 11.4244, -75.9683 P2: -113.233, -86.375
+P3: 11.4244, -75.9683 P4: -121.271, 75.7513
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.003982
+comparable_geographic_distance (sec):0.001118
+
+comparable_geographic_distance:3
+distance: 1
+P1: 176.376, 70.0368 P2: -24.0043, 64.0324
+P3: 176.376, 70.0368 P4: -30.9099, 5.59021
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004866
+comparable_geographic_distance (sec):0.001116
+
+comparable_geographic_distance:3
+distance: 2
+P1: 88.602, 81.5736 P2: 131.32, -60.9072
+P3: 88.602, 81.5736 P4: 54.1341, 33.8862
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004313
+comparable_geographic_distance (sec):0.001117
+
+comparable_geographic_distance:3
+distance: 1
+P1: 99.9409, -20.0503 P2: 110.715, -59.6321
+P3: 99.9409, -20.0503 P4: 10.9348, 46.7936
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004963
+comparable_geographic_distance (sec):0.00109
+
+comparable_geographic_distance:3
+distance: 1
+P1: 94.4976, 5.2264 P2: 98.0709, -48.003
+P3: 94.4976, 5.2264 P4: -93.4909, 24.5468
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004764
+comparable_geographic_distance (sec):0.001067
+
+comparable_geographic_distance:3
+distance: 2
+P1: -150.164, 66.7764 P2: 134.148, -89.299
+P3: -150.164, 66.7764 P4: 45.396, 84.233
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004066
+comparable_geographic_distance (sec):0.001188
+
+comparable_geographic_distance:3
+distance: 2
+P1: 138.744, -64.8602 P2: 60.8006, 33.0822
+P3: 138.744, -64.8602 P4: 172.326, -69.7662
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.005134
+comparable_geographic_distance (sec):0.001131
+
+comparable_geographic_distance:3
+distance: 2
+P1: -49.8846, -33.2047 P2: 103.554, -63.2279
+P3: -49.8846, -33.2047 P4: 104.914, 67.1603
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004838
+comparable_geographic_distance (sec):0.001155
+
+comparable_geographic_distance:3
+distance: 2
+P1: 83.1185, -77.2934 P2: -82.2113, -29.0187
+P3: 83.1185, -77.2934 P4: -77.8304, -51.2141
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004437
+comparable_geographic_distance (sec):0.001119
+
+comparable_geographic_distance:3
+distance: 2
+P1: 105.808, -42.0796 P2: 15.5238, -75.7757
+P3: 105.808, -42.0796 P4: 98.5732, -31.2744
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004365
+comparable_geographic_distance (sec):0.001091
+
+comparable_geographic_distance:3
+distance: 1
+P1: -135.81, 62.5167 P2: -121.954, -23.8351
+P3: -135.81, 62.5167 P4: 159.538, 38.6791
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004986
+comparable_geographic_distance (sec):0.001117
+
+comparable_geographic_distance:3
+distance: 2
+P1: -75.1889, -73.1403 P2: 55.7815, -48.049
+P3: -75.1889, -73.1403 P4: 106.514, -46.2768
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004003
+comparable_geographic_distance (sec):0.001118
+
+comparable_geographic_distance:3
+distance: 1
+P1: 94.0256, 74.6768 P2: -176.033, -44.2742
+P3: 94.0256, 74.6768 P4: -72.0999, -88.7393
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004884
+comparable_geographic_distance (sec):0.001116
+
+comparable_geographic_distance:3
+distance: 1
+P1: 29.9194, 12.1109 P2: -69.703, -83.2154
+P3: 29.9194, 12.1109 P4: 151.45, -6.91115
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004674
+comparable_geographic_distance (sec):0.001069
+
+comparable_geographic_distance:3
+distance: 1
+P1: 22.29, 23.8211 P2: 28.9111, 20.8414
+P3: 22.29, 23.8211 P4: -123.508, -42.4645
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.005351
+comparable_geographic_distance (sec):0.001093
+
+comparable_geographic_distance:3
+distance: 2
+P1: -69.0794, -75.3841 P2: 51.5038, 73.7669
+P3: -69.0794, -75.3841 P4: 164.302, 88.8809
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004373
+comparable_geographic_distance (sec):0.001118
+
+comparable_geographic_distance:3
+distance: 2
+P1: 60.6678, 31.7072 P2: -94.6901, 77.35
+P3: 60.6678, 31.7072 P4: 75.8359, -30.5963
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004559
+comparable_geographic_distance (sec):0.001093
+
+comparable_geographic_distance:3
+distance: 2
+P1: 24.7155, -74.3163 P2: 155.763, 34.6661
+P3: 24.7155, -74.3163 P4: -16.5195, -35.4954
+comparable_geographic_distance: P1, P2 equal to P3, P4
+consistency:0
+distance (sec):0.004652
+comparable_geographic_distance (sec):0.0012
+
